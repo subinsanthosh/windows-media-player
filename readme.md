@@ -1,17 +1,29 @@
-**How to run MPI code?**
+How to run MPI code?
 
 1. First write code and save hello.c
 2. Sudo apt install mpich
 3. mpicc hello.c -o hello
 4. mpirun -np 5 ./hello
 
-**How to run omp code??**
+How to run omp code??
 
 1. First write code and save area.c
+2. Terminal (sudo apt install gcc)
 
-Terminal (sudo apt install gcc)
+3. gcc area.c -o area.out
+4. export OMP_NUM_THREADS=4
+5. gcc -fopenmp area.c -o area.out
+6. ./area.out
 
-2. gcc area.c -o area.out
-3. export OMP_NUM_THREADS=4
-4. gcc -fopenmp area.c -o area.out
-5.   ./area.out
+or
+
+1. export OMP_GET_THREAD_NUM=4
+2. gcc -o area -fopenmp area.c
+3. ./area
+
+How to run in C?
+
+1.sudo apt-get update
+2. sudo apt install gcc
+3. gcc mul.c
+4. ./a.out
